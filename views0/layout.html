@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}My Site{% endblock %}</title>
+
+  {% block head %}
+
+	  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+	  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	  <link rel="stylesheet" href="/stylesheets/style.css">
+  {% endblock %}
+</head>
+<body>
+  
+	<div class="container">
+	  {% include "./partials/header.html" %}
+	  
+	  {% block content %}{% endblock %}
+	</div>
+	<!-- Bootstrap Model To ask question -->
+	<div class="modal fade" id="askModal" role="dialog" aria-labelledby="askModal" aria-hidden="true" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">close</span>
+					</button>
+					<h4 class="modal-title">Submit A Question</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="qtitle">Title:</label>
+							<input type="text" class="form-control" name="qtitle" id="qtitle">
+						</div>
+						<div class="form-group">
+							<label for="qbody">Body:</label>
+							<textarea class="form-control" name="qbody" id="qbody" style="resize: vertical;"></textarea>
+						</div>
+						<button type="button" class="btn btn-primary" id="submitQuestion">Submit</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	  {% include "./partials/footer.html" %}
+	  {% include "./partials/jscripts.html" %}
+</body>
+</html>

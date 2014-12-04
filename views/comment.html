@@ -1,0 +1,101 @@
+<!DOCTYPE html>  <!-- simple doctype declaration of HTML -->
+
+<html>
+
+	<!-- the HEAD tag below is an area can include meta data, title plus styles, scripts -->
+	<head>
+		<meta charset="utf-8" /> 
+	
+		<title>Add Comment</title>
+	
+		<!-- This call in your css style sheet 	-->
+		<link rel="stylesheet" href="Style.css" type="text/css">
+		
+		<!-- below is a HTML5shiv snippet which allows for older IE browesers to understand HTML5 -->
+		
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->		
+		
+	</head>
+
+	<!-- the BODY tag contains all the contents of the HTML document such as text, links etc -->
+	<body> 
+	
+	
+	<!-- the HEADER tag contains intro copy, nav list etc -->
+	<header>
+	<div class="wrapper"> <!-- all the content below is wrapped in a division called wrapper which is set to a
+	maximum width of 960px -->
+		
+		 <!-- main top left header/logo -->
+		<h1 class="logo"><a href="home.html"> <strong>StackOverflow</strong> </a></h1>
+		
+		<ul> <!-- unordered list -->
+			<li><a href="home.html">Home</a></li>
+			<li><a href="about us 2.html">About Us</a></li>
+			<li><a href="Ask a Question 2.html">Ask Question</a></li>
+			
+		</ul>
+	</div><!--.wrapper-->
+</header>
+
+
+
+
+<body>
+
+<section class="section_two"> <!-- this section contains the two articles -->
+	<!-- again we are wrapping this section within the wrapper -->
+
+			<article class="three">
+	
+<div class="wrapper">
+	
+	<p>Add your comment </p>
+  	</div>
+	
+</article>
+<center><fieldset>  
+<article class="four">
+
+<div>
+
+<form class="ask" action="http://127.0.0.1:8080/comment" method="post">
+
+<ul>
+<li> <strong> Name: </strong> </li>
+<br>
+<li><input type="text" name="name" value="Your Name" onFocus="if (value =='Your Name'){value =''}"onblur="if (value ==''){value='Your Name'}"/> </li>
+<br>
+<li> <strong> Comment: </strong> </li>
+<br>
+<div>
+<p>
+<textarea cols="100" name="Comment" onFocus="if (value =='Comment'){value =''}" onBlur="if (value ==''){value='Comment'}">Comment</textarea>
+</p>
+<p>&nbsp;  </p>
+  <center>
+  <input type="submit" value="  ADD COMMENT  ">
+  </center>
+  <p>&nbsp;  </p>
+</div>
+
+  
+</ul> 
+</form> 
+</div>
+</article>
+</fieldset></center>
+</body>
+  
+<p>&nbsp;  </p>
+<p>&nbsp;  </p>
+<footer>
+Copyright © StackOverflow.com
+</footer>
+<!--End Footer-->
+	
+	
+	</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+
+{% endblock %}
+
+{% block content %}
+{% parent %}
+
+  <div class="jumbotron">
+
+
+  </div>
+    <div class="list-group">
+    {% for question in questions %}
+
+      <a href="/questions/{{ question.question_id }}" class="list-group-item">
+          <h4 class="list-group-item-heading">{{question.title}}</h4>
+          <p class="list-group-item-text">{{question.contents.slice(0,question.question_body.indexOf(' ' ,150))}}...</p>
+        <br>
+          <ul class="nav nav-pills">
+            <li>Answers <span class="badge">{{question.answers.length}}</span></li>
+            <li>Comments <span class="badge">{{question.question_comments.length}}</span></li>
+          </ul>
+      </a>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}

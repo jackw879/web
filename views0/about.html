@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+  
+{% endblock %}
+
+{% block content %}
+<p>Here You will find information about RESTful web applications.</p>
+<p>{{ question }} </p>
+{% endblock %}
