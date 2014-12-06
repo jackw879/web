@@ -5,59 +5,51 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var methodOverride = require('method-override')
-var swig=require('swig');
-var orm=require('orm');
+var methodOverride = require('method-override');
+var swig = require('swig');
+var orm = require('orm');
 
-var models=require('./models/models.js');
-var router=require('./controller/router.js');
-/*
-var routes = require('./routes/index');
-var users = require('./routes/users');
-*/
+var models = require('./models/models.js');
+var router = require('./controller/router.js');
 
 var app = express();
-/*
-// view engine setup
-app.set('view engine', 'jade');
-app.set('views', path.join(__dirname, 'views'));*/
 
-app.engine('html',swig.renderFile);
+// view engine setup,use swig to render web page
+app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
- app.set('view cache', false);
+app.set('view cache', false);
 // will disable swig's cache
-swig.setDefaults({ cache: false });
+swig.setDefaults({
+    cache: false
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use method-override to enable specification of the HTTP method through a query string
 app.use(methodOverride('_method'));
 
-app.use(function(req,res,next){
-    models(function(err,db){
-        if(err){
+app.use(function(req, res, next) {
+    models(function(err, db) {
+        if (err) {
             console.log(err);
             return next(err);
-        };
-        req.models=db.models;
-        req.db=db;
+        }
+        req.models = db.models;
+        req.db = db;
         return next();
     });
 });
 
 router(app);
-
-/*
-app.use('/', routes);
-app.use('/users', users);
-*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

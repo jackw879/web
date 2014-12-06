@@ -24,6 +24,11 @@ module.exports=function(orm,db){
                     createTime : this.createTime,
                 }
             }
-        }	
+        },
+		autoFetch:true,
+		cache:false
+	});
+	question.sync(function (err) {
+		err && console.log(err);
 	});
 }

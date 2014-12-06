@@ -31,7 +31,7 @@ exports.getAllAnswers = function (req, res) {
     });
 };
 
-//get a question
+//get a answer
 exports.getAnswer = function (req, res) {
     req.models.answer.get(req.params.answer_id, function (err, answer) {
         if(err){
@@ -56,7 +56,7 @@ exports.getAnswer = function (req, res) {
         } 
     });
 };
-
+//create a answer to a question
 exports.createAnswer = function(req,res){
     var question_id=req.params.question_id;
 
@@ -74,7 +74,7 @@ exports.createAnswer = function(req,res){
                     res.status(200).send(answer);
                 },
                 'text/html': function(){
-                    res.redirect('/questions/' + req.params.question_id);
+                    res.redirect('/questions/' + question_id);
                 },
                 'default': function(){
                     res.status(406).send("Not Acceptable");
@@ -84,7 +84,7 @@ exports.createAnswer = function(req,res){
         }
     })
 }
-
+//updata a answer via answer id 
 exports.updateAnswer = function(req,res){
     req.models.answer.get(req.params.answer_id,function(err,answer){
         if(err) { 
@@ -118,7 +118,7 @@ exports.updateAnswer = function(req,res){
         }
     })
 }
-
+//delete a answer via answer id
 exports.delAnswer = function(req,res){
     req.models.answer.get(req.params.answer_id,function(err,answer){
         if(err){

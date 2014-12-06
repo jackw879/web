@@ -56,7 +56,7 @@ exports.getQuestion = function (req, res) {
         } 
     });
 };
-
+//create a question
 exports.createQuestion = function(req,res){
     req.models.question.create({
         title:req.body.title,
@@ -81,7 +81,7 @@ exports.createQuestion = function(req,res){
         }
 	})
 }
-
+//update a question
 exports.updateQuestion = function(req,res){
     req.models.question.get(req.params.question_id,function(err,question){
         if(err) {
@@ -115,7 +115,7 @@ exports.updateQuestion = function(req,res){
         }
     })
 }
-
+//delete a question
 exports.delQuestion = function(req,res){
     req.models.question.get(req.params.question_id,function(err,question){
         if(err){

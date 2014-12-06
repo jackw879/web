@@ -24,7 +24,13 @@ module.exports=function(orm,db){
                     createTime : this.createTime,
                 }
             }
-        }	
+        },
+		autoFetch:true,
+		cache:false
 	});
 	a_comment.hasOne('answer',db.models.answer,{reverse:'a_comment',autoFetch:true});
+	
+	a_comment.sync(function (err) {
+            err && console.log(err);
+        });
 }

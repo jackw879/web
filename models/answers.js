@@ -24,7 +24,14 @@ module.exports=function(orm,db){
                     createTime : this.createTime,
                 }
             }
-        }	
+        },
+		autoFetch:true,
+		cache:false
 	});
+	//when set autoFetch as true,user can find answer of a question directly
 	answer.hasOne('question',db.models.question,{reverse:'answers',autoFetch:true});
+	
+	answer.sync(function (err) {
+            err && console.log(err);
+        });
 }

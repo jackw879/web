@@ -1,7 +1,7 @@
 var orm=require('orm');
 var config=require('../config.js');
 var connection=null;
-
+//set the database
 function setDB(db,cb){
 	require('./questions')(orm,db);
 	require('./answers')(orm,db);

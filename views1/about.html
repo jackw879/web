@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+
+{% endblock %}
+
+{% block content %}
+{% parent %}
+
+<div class="wrapper">
+	<h5> About Us </h5>
+	<br>
+	<p> The Allotment is a crowd-sourced question and answer website. </p>
+</div>
+	
+</article>
+{% endblock %}
+
+{% block footer %}
+  {% parent %}
+
+{% endblock %}

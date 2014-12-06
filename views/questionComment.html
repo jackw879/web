@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+
+{% endblock %}
+
+{% block content %}
+{% parent %}
+
+
+
+<section class="section_two"> <!-- this section contains the two articles -->
+	<!-- again we are wrapping this section within the wrapper -->
+
+			<article class="three">
+	
+<div class="wrapper">
+	
+	<p>Add your comment </p>
+  	</div>
+	
+</article>
+<center><fieldset>  
+<article class="four">
+
+<div>
+
+<form class="ask" action="/questions/{{id}}/qcomments" method="post">
+
+<ul>
+<br>
+<li> <strong> Comment: </strong> </li>
+<br>
+<div>
+<p>
+<textarea cols="100" name="contents" onFocus="if (value =='Comment'){value =''}" onBlur="if (value ==''){value='Comment'}">Comment</textarea>
+</p>
+<p>&nbsp;  </p>
+  <center>
+  <input type="submit" value="  ADD COMMENT  ">
+  </center>
+  <p>&nbsp;  </p>
+</div>
+
+  
+</ul> 
+</form> 
+</div>
+</article>
+</fieldset></center>
+</body>
+  
+<p>&nbsp;  </p>
+<p>&nbsp;  </p>
+
+{% endblock %}
+
+{% block footer %}
+  {% parent %}
+
+{% endblock %}

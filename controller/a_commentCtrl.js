@@ -53,7 +53,7 @@ exports.getAnswerComment = function (req, res) {
         } 
     });
 };
-
+//create a answer comment 
 exports.createAnswerComment = function(req,res){
     var answer_id=req.params.answer_id;
 
@@ -81,7 +81,7 @@ exports.createAnswerComment = function(req,res){
         }
     })
 }
-
+//update a answer comment
 exports.updateAnswerComment = function(req,res){
     req.models.a_comment.get(req.params.acomment_id,function(err,acomment){
         if(err) { 
@@ -115,7 +115,7 @@ exports.updateAnswerComment = function(req,res){
         }
     })
 }
-
+//delete a answer comment
 exports.delAnswerComment = function(req,res){
     req.models.a_comment.get(req.params.acomment_id,function(err,acomment){
         if(err){

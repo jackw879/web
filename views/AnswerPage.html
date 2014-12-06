@@ -10,7 +10,6 @@
 {% block content %}
 {% parent %}
 
-<!--<form class="ask" action="http://127.0.0.1:8080/answer" method="post" --> 
 
 <ul class="three_columns">
 <fieldset>  
@@ -18,32 +17,50 @@
 <legend><h2>{{ Question.title }}</h2></legend>
 <div>
 <ul>
-	<!--{% for QuestionDesc in QuestionsDesc %}
-    <li{% if loop.first %}{% endif %}></a>
-    {{ Question }}</a>
-    </li>
-    {% endfor %} -->
 	<li>{{Question.contents}}</li>
 </ul>
+<br>
 <hr>
-    <a href=comment.html>ADD COMMENT</a> || <form action="/questions/{{Question.id}}?_method=DELETE" method="POST">
-   <div class="button">
-       <button type="submit">Delete Question</button>
-   </div>
-</form><a href=delete.html>DELETE</a>
+</div>
+
+	<div class="button">
+	
+		<button type="submit" onclick="window.location='/questions/{{Question.id}}/questionComment'">Add Comment</button>
+		<button type="submit" onclick="window.location='/questions/{{Question.id}}/questionEdit'">Edit Question</button>
+	<form action="/questions/{{Question.id}}?_method=DELETE" method="POST" id="delb">
+        <button type="submit">Delete Question</button>
+	</form>
+	</div>
 <hr>
-<ul><!--
+
+
 <div>
-	{% for Answer in question.answer %}
-    <li{% if loop.first %}{% endif %}></a>
-    {{ Answer.contents }}</a>
+<ul class="three_columns">
+<fieldset>  
+<legend><h2>Comments</h2></legend>
+<div>
+<ul>
+	{% for q_comment in Question.q_comment %}
+    <li{% if loop.first %}{% endif %}>
+     {{ q_comment.contents }}
+	 <div class="button">
+	
+		<button type="submit" onclick="window.location='/questions/{{Question.id}}/edit'">Edit Comment</button>
+	<form action="/qcomments/{{q_comment.id}}?_method=DELETE" method="POST" id="delb">
+        <button type="submit">Delete Comment</button>
+	</form>
+	</div>
     </li>
-<hr>
-    <a href=comment.html>ADD COMMENT</a> || <a href=delete.html>DELETE</a>
-<hr>
     {% endfor %}
-</div> -->
 </ul>
+</div>
+<hr>
+
+</fieldset>
+
+</ul>
+</div> 
+
 <div>
 <ul class="three_columns">
 <fieldset>  
@@ -52,29 +69,42 @@
 <ul>
 	{% for answer in Question.answers %}
     <li{% if loop.first %}{% endif %}>
-    <a href="/questions/{{question.id}}">{{ answer.contents }}</a>
+	{{ answer.contents }}</a>
+	<div class="button">
+	
+	<button type="submit" onclick="window.location='/questions/{{Question.id}}/comments'">Add Comment</button>
+		<button type="submit" onclick="window.location='/questions/{{Question.id}}/edit'">Edit Answer</button>
+	<form action="/questions/{{Question.id}}?_method=DELETE" method="POST" id="delb">
+        <button type="submit">Delete Answer</button>
+	</form>
     </li>
     {% endfor %}
 </ul>
 </div>
+<hr>
+
+	</div>
 </fieldset>
 
-</ul>
-</div>
 <ul>
 <p>
-<li> <strong> Answer: </strong><textarea cols="70"rows="5" name="Answer" onFocus="if (value =='Answer'){value =''}" onBlur="if (value ==''){value='Answer'}">Answer</textarea>
-</p>
-  <center>
+<form class="ask" action="/questions/{{Question.id}}/answers" method="post">
+<li> <strong> Answer: </strong><textarea cols="70"rows="5" name="contents" onFocus="if (value =='Answer'){value =''}" onBlur="if (value ==''){value='Answer'}">Answer</textarea>
+
   <input type="submit" value="  POST YOUR ANSWER  ">
-  </center>
-  <p>&nbsp;  </p>
+ 
+</form>
+<p>&nbsp;  </p>
 
-
-  
 </ul> 
   
 </div>
+
+</fieldset>
+
+</ul>
+</div> 
+
 </fieldset>
 
 {% endblock %}

@@ -54,7 +54,7 @@ exports.getQuestionComment = function (req, res) {
         } 
     });
 };
-
+//create a question comment of a question
 exports.createQuestionComment = function(req,res){
     var question_id=req.params.question_id;
 
@@ -81,7 +81,7 @@ exports.createQuestionComment = function(req,res){
         }
     })
 }
-
+//update a question comment via question comment id
 exports.updateQuestionComment = function(req,res){
     req.models.q_comment.get(req.params.qcomment_id,function(err,qcomment){
         if(err) { 
@@ -114,7 +114,7 @@ exports.updateQuestionComment = function(req,res){
         }
     })
 }
-
+//delete a question comment via its id
 exports.delQuestionComment = function(req,res){
     req.models.q_comment.get(req.params.qcomment_id,function(err,qcomment){
         if(err){

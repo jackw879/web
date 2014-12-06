@@ -39,7 +39,8 @@
 	{% for question in questions %}
     <li{% if loop.first %}{% endif %}>
     <a href="/questions/{{question.id}}">{{ question.title }}&nbsp;&nbsp;Asked at:{{ question.createTime|date('F jS \o\f Y \a\t G:i')}}</a>
-	</li>
+	
+    </li>
     {% endfor %}
 </ul>
 </div>
