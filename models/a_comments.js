@@ -25,12 +25,12 @@ module.exports=function(orm,db){
                 }
             }
         },
-		autoFetch:true,
-		cache:false
+        autoFetch:true,
+		autoFetchLimit : 2,
+		cache:false	
 	});
 	a_comment.hasOne('answer',db.models.answer,{reverse:'a_comment',autoFetch:true});
-	
 	a_comment.sync(function (err) {
-            err && console.log(err);
-        });
+		err && console.log(err);
+	});
 }

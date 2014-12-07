@@ -25,12 +25,13 @@ module.exports=function(orm,db){
                 }
             }
         },
-		autoFetch:true,
-		cache:false		
+        autoFetch:true,
+		autoFetchLimit : 2,
+		cache:false	
 	});
 	q_comment.hasOne('question',db.models.question,{reverse:'q_comment',autoFetch:true});
 	
 	q_comment.sync(function (err) {
-            err && console.log(err);
-        });
+		err && console.log(err);
+	});
 }

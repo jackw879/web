@@ -19,7 +19,7 @@ exports.getAllAnswers = function (req, res) {
                         res.status(200).send(answers);
                     },
                     'text/html': function(){
-                       // res.redirect('/questions/');
+                      res.status(200).send("All answers: " + JSON.stringify(answers));
                     },
                     'default': function(){
                         res.status(406).send("Not Acceptable");
@@ -45,7 +45,7 @@ exports.getAnswer = function (req, res) {
                         res.status(200).send(answer);
                     },
                     'text/html': function(){
-                      // res.redirect('/questions/' + req.params.question_id);
+					res.status(200).send("answer is: " + JSON.stringify(answer));
                     },
                     'default': function(){
                         res.status(406).send("Not Acceptable");
@@ -90,10 +90,10 @@ exports.updateAnswer = function(req,res){
         if(err) { 
             res.status(404).send("Can not find the answer");
         }else{
-            if(!req.body.title || !req.body.contents){
+            if(!req.body.contents){
                 res.status(400).send('Bad request');
             }else{
-                answer.title=req.body.title;
+                //answer.title=req.body.title;
                 answer.contents=req.body.contents;
             };
 
@@ -106,7 +106,7 @@ exports.updateAnswer = function(req,res){
                                 res.status(200).send(answer);
                             },
                             'text/html': function(){
-                                res.redirect('/questions/' + req.params.question_id);
+                                res.redirect('/questions/');
                             },
                             'default': function(){
                                 res.status(406).send("Not Acceptable");

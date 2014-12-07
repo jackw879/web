@@ -9,9 +9,6 @@
 
 {% block content %}
 {% parent %}
-
-
-
 <section class="section_two"> <!-- this section contains the two articles -->
 	<!-- again we are wrapping this section within the wrapper -->
 
@@ -19,7 +16,7 @@
 	
 <div class="wrapper">
 	
-	<p>Add your question comment </p>
+	<p>Edit your Answer Comment</p>
   	</div>
 	
 </article>
@@ -28,24 +25,12 @@
 
 <div>
 
-<form class="ask" action="/questions/{{id}}/qcomments" method="post">
-
-<ul>
+<form class="ask" action="/acomments/{{id}}?_method=PUT" method="post">
+<li> <strong>New Answer Comment: </strong> </li>
+<input type="text" size="70" name="contents" value="new answer comment" onFocus="if (value =='new answer comment'){value =''}" onBlur="if (value ==''){value='new answer comment'}"/></li>
 <br>
-<li> <strong>question Comment: </strong> </li>
-<br>
-<div>
-<p>
-<textarea cols="100" name="contents" onFocus="if (value =='question comment'){value =''}" onBlur="if (value ==''){value='question comment'}">question comment</textarea>
-</p>
-<p>&nbsp;  </p>
-  <center>
-  <input type="submit" value="  ADD COMMENT  ">
-  </center>
+  <input type="submit" value="SUBMIT">
   <p>&nbsp;  </p>
-</div>
-
-  
 </ul> 
 </form> 
 </div>

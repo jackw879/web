@@ -25,8 +25,9 @@ module.exports=function(orm,db){
                 }
             }
         },
-		autoFetch:true,
-		cache:false
+        autoFetch:true,
+		autoFetchLimit : 2,
+        cache:false	
 	});
 	question.sync(function (err) {
 		err && console.log(err);

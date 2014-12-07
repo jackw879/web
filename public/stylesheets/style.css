@@ -1,21 +1,20 @@
 /* CSS Reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
-table{border-collapse:collapse;border-spacing:0;}
-fieldset,img{border:0;}
-ul{ list-style:none; list-style-position:outside;}
-a {  outline: none;}
+{
+margin:0;
+padding:0;
+}
 
 /* This informs older browsers how to handle HTML5*/
-header, footer, aside, nav, article {display: block;}
+header, footer, aside, nav, article 
+{
+display: block;
+}
 
 a1 {
 	display:inline-table;
 	height: 150px;
 	width:800px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
+	border: solid;
 	font-size: 15px;
 	border-width: 1px;
 	margin: 40px 0px 0px 30px
@@ -28,23 +27,17 @@ a2 {
 	width:800px;
 	font-size: 15px;
 	border-width:thin;
-	border-top-style: dotted;
-	border-right-style: dotted;
-	border-bottom-style: dotted;
-	border-left-style: dotted;
+	border :dotted;
 	margin: 0px 0px 0px 60px;
 	border-width: 1px;
 
 }
 
-a3 {
+a3,a5 {
 	display:inline-table;
 	height: 150px;
 	width:800px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
+	border: solid;
 	font-size: 15px;
 	border-width: 1px;
 	margin: 60px 0px 0px 30px
@@ -64,42 +57,37 @@ a3 {
 	margin: 40px 0px 0px 30px
 	}
 
-a5 {
-	display:inline-table;
-	height: auto;
-	width:800px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	font-size: 15px;
-	border-width: 1px;
-	margin: 60px 0px 0px 30px
-	}
+
 
 
 body {
-	background: #ffffff; /* Set the main background colour to White */
-	color: #010101; /* Set the main text colour to Black */
+
 	font-family: Rockwell, Helvetica, Arial, sans-serif; /* Sets main font of text */
 	font-size: 12px;
 }
 
 p {
-	line-height: 150%; /* This sets the line height within the paragraph tags */
+	line-height: 150%;
+	/* This sets the line height within the paragraph tags */
 }
 
-h1, h2, h3, h4, h5, h6, p { /* Sets font and font boldness for all main header tags */
+h1, h2, h3, h4, p { /* Sets font and font boldness for all main header tags */
 	font-family: Rockwell, Helvetica, Arial, sans-serif;
 	font-weight: lighter; 
 }
 
 a:link, a:visited { /* Set colour of all links on webpage and removes any underlining */
 	color: #0000FF;
-	text-decoration: line;
-	font-size: 10px;
+	text-decoration: none;
+	font-size: 15px;
 }
-
+#que{
+	list-style: none;
+}
+#nodec{
+text-decoration:none;
+font-size:12px;
+}
 .wrapper { /* The main container for the webpage, this sets the width and centers the webpage in your browser*/
 	width: 960px;
 	margin: 0 auto;
@@ -108,7 +96,7 @@ a:link, a:visited { /* Set colour of all links on webpage and removes any underl
 /* header */
 header {
 	height: 130px;
-	background-color: #FE9A2E;
+	background-color: #81DAF5;
 }
 
 
@@ -291,22 +279,6 @@ a.question {
 	font-weight:bold;
 }
 
-ul.three_columns h4 {
-	margin: 20px 0 20px 0px;
-	font-size:20px;
-	font-weight:bold;
-}
-ul.three_columns h5 {
-	margin: 20px 0 20px 0px;
-	font-size:20px;
-	font-weight:bold;
-}
-
-ul.three_columns h6 {
-	margin: 20px 0 20px 0px;
-	font-size:20px;
-	font-weight:bold;
-}
 
 
 
@@ -350,27 +322,30 @@ legend {
 fieldset { 
     display: block;
     margin-left: 2px;
-    margin-right: 2px;
     padding-top: 0.35em;
     padding-bottom: 0.625em;
     padding-left: 0.75em;
-	padding-right: 0.75em;
     border: 2px solid black;
-	width:550px;
+	width:500px;
 }
 /* Footer */
 footer {
-    background-color:#FE9A2E;
-    color:black;
+    background-color:#81DAF5;
     clear:both;
     text-align:center;
-    padding:5px;
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    right:0px;
     height:50px;
-    margin-bottom:0px;	
+    margin: 30px 0px 0px 0px;	
+	
 }
 
 
+#com{
+margin-left: 60px;
+height:auto;
+
+}
+#com2{
+margin-left: 1px;
+width:650px;
+margin: 0 auto;
+}

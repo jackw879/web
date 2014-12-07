@@ -25,13 +25,13 @@ module.exports=function(orm,db){
                 }
             }
         },
-		autoFetch:true,
+        autoFetch:true,
+		autoFetchLimit : 2,
 		cache:false
 	});
 	//when set autoFetch as true,user can find answer of a question directly
 	answer.hasOne('question',db.models.question,{reverse:'answers',autoFetch:true});
-	
 	answer.sync(function (err) {
-            err && console.log(err);
-        });
+		err && console.log(err);
+	});
 }

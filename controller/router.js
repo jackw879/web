@@ -15,10 +15,22 @@ module.exports=function(app)
 	 res.render('AskQuestion.html');
   });
  app.get('/questions/:question_id/questionComment',function(req,res){
-    res.render('questionComment',{id:req.params.question_id});
+    res.render('questionComment',{id:req.params.question_id,title:"addQuestionComment"});
   });
  app.get('/questions/:question_id/questionEdit',function(req,res){
-    res.render('questionEdit',{id:req.params.question_id});
+    res.render('questionEdit',{id:req.params.question_id,title:"editQuestion"});
+  });
+ app.get('/qcomments/:qcomment_id/qcommentEdit',function(req,res){
+    res.render('qcommentEdit',{id:req.params.qcomment_id,title:"editQuestionComment"});
+ });
+ app.get('/answers/:answer_id/answerEdit',function(req,res){
+    res.render('answerEdit',{id:req.params.answer_id,title:"editAnswer"});
+  });
+app.get('/answers/:answer_id/answerComment',function(req,res){
+    res.render('answerComment',{id:req.params.answer_id,title:"addAnswerComment"});
+  });
+app.get('/acomments/:acomment_id/acommentEdit',function(req,res){
+    res.render('acommentEdit',{id:req.params.acomment_id,title:"editAnswerComment"});
   });
  
 //question router part
@@ -30,20 +42,20 @@ module.exports=function(app)
 //answer router part
   app.get('/questions/:question_id/answers', answer.getAllAnswers);//get all answers of a question(address a question by question id)
   app.get('/questions/:question_id/answers/:answer_id',answer.getAnswer);//get a answer of a question(address the answer by question id and answer id)
-  app.post('/questions/:question_id/answers',answer.createAnswer);
-  app.put('/answers/:answer_id',answer.updateAnswer);
-  app.delete('/answers/:answer_id',answer.delAnswer);
+  app.post('/questions/:question_id/answers',answer.createAnswer);//create a answer to a question (address the question by question id)
+  app.put('/answers/:answer_id',answer.updateAnswer);// update a answer by put method(via answer id)
+  app.delete('/answers/:answer_id',answer.delAnswer);//delete a answer by question id
 //question router part 
-  app.get('/questions/:question_id/qcomments', q_comment.getAllQuestionComments);
-  app.get('/questions/:question_id/qcomments/:qcomment_id',q_comment.getQuestionComment);
-  app.post('/questions/:question_id/qcomments',q_comment.createQuestionComment);
-  app.put('/qcomments/:qcomment_id',q_comment.updateQuestionComment);
-  app.delete('/qcomments/:qcomment_id',q_comment.delQuestionComment);
+  app.get('/questions/:question_id/qcomments', q_comment.getAllQuestionComments);//get all question comments
+  app.get('/questions/:question_id/qcomments/:qcomment_id',q_comment.getQuestionComment);//get a comment of a question(address the comment by question id and comment id)
+  app.post('/questions/:question_id/qcomments',q_comment.createQuestionComment);//create a question comment by post method
+  app.put('/qcomments/:qcomment_id',q_comment.updateQuestionComment);// update a question comment by put method
+  app.delete('/qcomments/:qcomment_id',q_comment.delQuestionComment);//delete a question comment by question comment id
 //answer router part
-  app.get('/answers/:answer_id/acomments', a_comment.getAllAnswersComments);
-  app.get('/answers/:answer_id/acomments/:acomment_id',a_comment.getAnswerComment);
-  app.post('/answers/:answer_id/acomments',a_comment.createAnswerComment);
-  app.put('/acomments/:acomment_id',a_comment.updateAnswerComment);
-  app.delete('/acomments/:acomment_id',a_comment.delAnswerComment);
+  app.get('/answers/:answer_id/acomments', a_comment.getAllAnswersComments);//get all answer comments
+  app.get('/answers/:answer_id/acomments/:acomment_id',a_comment.getAnswerComment);//get a comment of a answer(address the comment by answer id and comment id)
+  app.post('/answers/:answer_id/acomments',a_comment.createAnswerComment);//create a answer comment by post method
+  app.put('/acomments/:acomment_id',a_comment.updateAnswerComment);// update a answer comment by put method
+  app.delete('/acomments/:acomment_id',a_comment.delAnswerComment);//delete a answer comment by answer comment id
 
 }

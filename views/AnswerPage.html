@@ -30,14 +30,10 @@
 	<form action="/questions/{{Question.id}}?_method=DELETE" method="POST" id="delb">
         <button type="submit">Delete Question</button>
 	</form>
-	</div>
-<hr>
-
-
-<div>
+	<div>
 <ul class="three_columns">
-<fieldset>  
-<legend><h2>Comments</h2></legend>
+<fieldset id="com">  
+<legend><h2>Question Comments</h2></legend>
 <div>
 <ul>
 	{% for q_comment in Question.q_comment %}
@@ -45,25 +41,32 @@
      {{ q_comment.contents }}
 	 <div class="button">
 	
-		<button type="submit" onclick="window.location='/questions/{{Question.id}}/edit'">Edit Comment</button>
-	<form action="/qcomments/{{q_comment.id}}?_method=DELETE" method="POST" id="delb">
+		<button type="submit" onclick="window.location='/qcomments/{{q_comment.id}}/qcommentEdit'">Edit Comment</button>
+	<form action="/qcomments/{{q_comment.id}}?_method=DELETE" method="POST" id="delqc">
         <button type="submit">Delete Comment</button>
 	</form>
 	</div>
+	<hr>
     </li>
     {% endfor %}
 </ul>
 </div>
-<hr>
+
 
 </fieldset>
 
 </ul>
 </div> 
+	
+	</div>
+<hr>
+
+
+
 
 <div>
 <ul class="three_columns">
-<fieldset>  
+<fieldset id="com2">  
 <legend><h2>Answers</h2></legend>
 <div>
 <ul>
@@ -72,18 +75,39 @@
 	{{ answer.contents }}</a>
 	<div class="button">
 	
-	<button type="submit" onclick="window.location='/questions/{{Question.id}}/comments'">Add Comment</button>
-		<button type="submit" onclick="window.location='/questions/{{Question.id}}/edit'">Edit Answer</button>
-	<form action="/questions/{{Question.id}}?_method=DELETE" method="POST" id="delb">
+		<button type="submit" onclick="window.location='/answers/{{answer.id}}/answerComment'">Add Comment</button>
+		<button type="submit" onclick="window.location='/answers/{{answer.id}}/answerEdit'">Edit Answer</button>
+	<form action="/answers/{{answer.id}}?_method=DELETE" method="POST" id="delb">
         <button type="submit">Delete Answer</button>
 	</form>
+	
+	<div>
+<ul id="com2">
+<fieldset>  
+<legend><h2>Answer Comment</h2></legend>
+	{% for a_comment in answer.a_comment %}
+    <li{% if loop.first %}{% endif %}>
+     {{ a_comment.contents }}
+	 <div class="button">
+	
+		<button type="submit" onclick="window.location='/acomments/{{a_comment.id}}/acommentEdit'">Edit Comment</button>
+	<form action="/acomments/{{a_comment.id}}?_method=DELETE" method="POST" id="delb">
+        <button type="submit">Delete Comment</button>
+	</form>
+	</div>
+	<hr>
     </li>
     {% endfor %}
 </ul>
 </div>
-<hr>
+	</div><hr>
+	  
+    </li>
+    {% endfor %}
+</ul>
+</div>
 
-	</div>
+
 </fieldset>
 
 <ul>
@@ -102,10 +126,9 @@
 
 </fieldset>
 
-</ul>
-</div> 
+</ul> 
+</ul> 
 
-</fieldset>
 
 {% endblock %}
 

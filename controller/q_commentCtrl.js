@@ -102,7 +102,7 @@ exports.updateQuestionComment = function(req,res){
                                 res.status(200).send(qcomment);
                             },
                             'text/html': function(){
-                                res.redirect('/questions/' + req.params.question_id);
+                                res.redirect('/questions/');
                             },
                             'default': function(){
                                 res.status(406).send("Not Acceptable");
