@@ -1,78 +1,24 @@
-/* CSS Reset */
-
-/* This informs older browsers how to handle HTML5*/
 header, footer, aside, nav, article 
 {
 display: block;
 }
 
-a1 {
-	display:inline-table;
-	height: 150px;
-	width:800px;
-	border: solid;
-	font-size: 15px;
-	border-width: 1px;
-	margin: 40px 0px 0px 30px
-	}
-
-
-a2 {
-	display:block;
-	height: 75px;
-	width:800px;
-	font-size: 15px;
-	border-width:thin;
-	border :dotted;
-	margin: 0px 0px 0px 60px;
-	border-width: 1px;
-
-}
-
-a3,a5 {
-	display:inline-table;
-	height: 150px;
-	width:800px;
-	border: solid;
-	font-size: 15px;
-	border-width: 1px;
-	margin: 60px 0px 0px 30px
-
-	}
-	
-	a4 {
-	display:inline-table;
-	height: auto;
-	width:800px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	font-size: 15px;
-	border-width: 1px;
-	margin: 40px 0px 0px 30px
-	}
-
-
-
-
 body {
 
-	font-family: Rockwell, Helvetica, Arial, sans-serif; /* Sets main font of text */
+	font-family: Rockwell, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 }
 
 p {
 	line-height: 150%;
-	/* This sets the line height within the paragraph tags */
 }
 
-h1, h2, h3, h4, p { /* Sets font and font boldness for all main header tags */
+h1, h2, h3, h4, p { 
 	font-family: Rockwell, Helvetica, Arial, sans-serif;
 	font-weight: lighter; 
 }
 
-a:link, a:visited { /* Set colour of all links on webpage and removes any underlining */
+a:link, a:visited { 
 	color: #0000FF;
 	text-decoration: none;
 	font-size: 15px;
@@ -84,19 +30,17 @@ a:link, a:visited { /* Set colour of all links on webpage and removes any underl
 text-decoration:none;
 font-size:12px;
 }
-.wrapper { /* The main container for the webpage, this sets the width and centers the webpage in your browser*/
+.wrapper { 
 	width: 960px;
 	margin: 0 auto;
 }
 
-/* header */
 header {
 	height: 130px;
 	background-color: #81DAF5;
 }
 
 
-/* This specifically sets the main logo / link to the below descriptions */
 h1.logo a { 
 	width: 400px;
 	height: 50px;
@@ -111,21 +55,18 @@ h1.logo a {
 	
 
 }
-/* main navigation / header section */
 
-header ul { /* This floats the unordered list for the navigation to the right of the header*/
+header ul { 
 	float: right;
-	margin: 35px 0px 0px 0px; /* Margins are set : Top, Right, Bottom, Left */
+	margin: 35px 0px 0px 0px;
 }
 
-/* specific instructions for each individual list item in your unordered list  */
 header li {
 	float: left;
 	display:block;
 	width: 90px;
 	height: 36px;
-	margin: 0 10px 0 0; /* Margins are set : Top, Right, Bottom, Left */
-}
+	margin: 0 10px 0 0;
 
 header li a {
 	color: #B8B8B8;
@@ -135,9 +76,8 @@ header li a {
 	text-align: center;
 	font-weight: bold;
 	line-height: 36px;
-	border: 3px solid #663300; /* Adds a grey border to the each navigation button */
+	border: 3px solid #663300;
 	
-	/* This rounds the corners off the rectangle border on each navigation button */
 	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; 
 }
 
@@ -148,13 +88,9 @@ header li a {
 
 
 
-/* Section one */
-
-/* this section is the area where the big Welcome is in */
-
 section.section_one {
 	height: 310px;
-	color:#ffffff; /* sets colour of text in this section to White */
+	color:#ffffff;
 	
 	}
 
@@ -178,7 +114,7 @@ margin:20px;
 
 article.one p{
 
-margin:0px 20px 20px 20px; /* Margins are set : Top, Right, Bottom, Left */
+margin:0px 20px 20px 20px;
 
 }
 
@@ -324,7 +260,7 @@ fieldset {
     border: 2px solid black;
 	width:500px;
 }
-/* Footer */
+
 footer {
     background-color:#81DAF5;
     clear:both;
