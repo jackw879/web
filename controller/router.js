@@ -9,10 +9,10 @@ module.exports=function(app)
   app.get('/', question.getAllQuestions);
   
   app.get('/about',function(req,res){
-	 res.render('about.html');
+	 res.render('about.html',{title:"aboutPage"});
   });
   app.get('/askquestion',function(req,res){
-	 res.render('AskQuestion.html');
+	 res.render('AskQuestion.html',{title:"askQuestionPage"});
   });
  app.get('/questions/:question_id/questionComment',function(req,res){
     res.render('questionComment',{id:req.params.question_id,title:"addQuestionComment"});
