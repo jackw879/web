@@ -9,29 +9,29 @@
 
 {% block content %}
 {% parent %}
-<section class="section_two"> <!-- this section contains the two articles -->
-	<!-- again we are wrapping this section within the wrapper -->
+<section class="section_two"> 
 
 			<article class="three">
 	
 <div class="wrapper">
 	
-	<p>Edit your Question comment</p>
+	<p>Edit Your Question Comment</p>
   	</div>
 	
 </article>
+
 <center><fieldset>  
 <article class="four">
 
 <div>
 
 <form class="ask" action="/qcomments/{{id}}?_method=PUT" method="post">
-<li> <strong>new question Comment: </strong> </li>
+<p> <strong> New Question Comment: </strong> </p>
 <input type="text" size="70" name="contents" value="input your new question comment" onFocus="if (value =='input your new question comment'){value =''}" onBlur="if (value ==''){value='input your new question comment'}"/></li>
 <br>
   <input type="submit" value="SUBMIT">
   <p>&nbsp;  </p>
-</ul> 
+ 
 </form> 
 </div>
 </article>
