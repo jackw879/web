@@ -1,3 +1,7 @@
+/*jslint nomen: true */
+/*jslint unparam: true*/
+/*jslint node: true */
+"use strict";
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
