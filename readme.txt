@@ -1,13 +1,18 @@
-﻿Brief guide
+﻿A Brief Guide to the Web Architecture Assignment (Group 15)
+Group members: 
+Dong Li (dl1e14)
+Anis A Sharip (aas3g14)
+Jack Webster (jw30g11)
+Antigoni Kritioti (ak5e14)
 
-In our application of web architecture, we develop web pages that allow to create, update, get, delete a new question. And we can also do these methods to answer or comment of a question.
+In our application for the Web Architecture assignment, we developed web pages that allow a client to create, update, get, delete a new question. These HTTP verbs also apply to the answering of a question, as well as the ability to comment on both a question and answer.
 
-User can run the application in browser to achieve these function through our GUI, they can also test the functions by running CURL commands.
+Users can run the application in a browser to achieve these functions through our GUI. Users can also test the functions by running CURL commands.
 
 
 
-Run the application
-The testing server system is Ubuntu Server LTS 14.04.1,which have installed Node and SQLite
+Runing the application:
+The testing server system is Ubuntu Server LTS 14.04.1, which have Node and SQLite installed.
 
 1. npm install
 Open the folder where the application is in the terminal, and install required modules by command "npm install"
@@ -19,14 +24,15 @@ If you want work with current database, you can skip this step, otherwise, you c
 start the server of the application. use command "npm start" to start the server
 
 4.run the application in browser
-Open the browser and type "http://localhost:3000" in the address bar in browser, there will show the index page of the application, and users can use functions in the web.
+Open the browser and type "http://localhost:3000" in the address bar in the browser and there will show the index page of the application, and users can use functions in the web.
 
 
-Test the application 
-Using curl command
-After running server of the application by "npm start" command in terminal, open another terminal and test the application by follow commands of curl
+Testing the application:
 
-Testing head
+Using curl commands:
+After running server of the application by "npm start" command in terminal, open another terminal and test the application by follow curl commands:
+
+Testing head:
 
 curl --HEAD localhost:3000/questions
 
@@ -35,9 +41,9 @@ Users can also test the head of the http head when implementing other methods li
 curl -i http://localhost:3000/questions
 
 
-testing HTTP verbs
+testing HTTP verbs:
 
-(the question which id is 2 is already existed in the database)
+(the question for which id is “2” is already exists in the database)
 
 test GET method:
 curl http://localhost:3000/questions
@@ -104,7 +110,7 @@ http://localhost:3000/acomments/:acomment_id
 DELETE method
 http://localhost:3000/acomments/:acomment_id
 
-besides users can use routers in the follow to get specifical page in browser:
+In addition, users can use the following routers to get a specific page in the browser:
 http://localhost:3000/                                                 show the index page
 http://localhost:3000/about                                            show the about page
 http://localhost:3000/askQuestion                                      show the page of asking question
