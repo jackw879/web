@@ -1,8 +1,4 @@
 /* CSS Reset */
-{
-margin:0;
-padding:0;
-}
 
 /* This informs older browsers how to handle HTML5*/
 header, footer, aside, nav, article 
@@ -212,7 +208,7 @@ font-size:15px;
 }
 
 article.three {
-	position: left;
+	left:0px;
 	margin-top: 20px
 
 }
